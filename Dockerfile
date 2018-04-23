@@ -17,7 +17,7 @@ RUN rm -rf /etc/apt/apt.conf.d/docker-gzip-indexes && apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /
-RUN chmod 755 /scripts/ -R
+RUN chmod +x /entrypoint.sh
 
 EXPOSE 53/udp 53/tcp 10000/tcp
 VOLUME ["${DATA_DIR}"]
